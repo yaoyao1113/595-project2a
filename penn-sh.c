@@ -165,52 +165,7 @@ void executeShell(int timeout) {
                 }
             }
 
-            // while(commandArray[m] != NULL){
-            //     if(commandArray[m][0] == '>'){
-            //         countOUT++;
-            //         if(countOUT > 1){
-            //             dup2(saved_stdout, STDOUT_FILENO);
-            //             perror("Invalid: Multiple Standard output redirects.\n");
-            //             free(args);
-            //             exit(EXIT_FAILURE);
-            //         }else{
-            //             m++;
-            //             //the String after >
-            //             redirectionsSTDOUTtoFile(commandArray[m]);
-            //             m++;
-            //         }
-            //     }
-            //     else if(commandArray[m][0] == '<'){
-            //         countIN++;
-            //         if(countIN > 1){
-            //             dup2(saved_stdout, STDOUT_FILENO);
-            //             perror("Invalid: Multiple Standard input redirects.\n");
-            //             free(args);
-            //             exit(EXIT_FAILURE);
-            //         }else{
-            //             m++;
-            //             //if the file exists
-            //             if(access(commandArray[m], F_OK) == 0){
-            //                 redirectionsSTDINtoFile(commandArray[m]);
-            //             }
-            //             else{
-            //                perror("Invalid standard input redirect: No such file or directory");
-            //                exit(EXIT_FAILURE);
-            //             }   
-            //             m++;   
-            //         }
-            //     }
-            //     else{
-            //         //check crt D
-            //         if(commandArray[m][0] == '\0'){
-            //             exit(EXIT_FAILURE);
-            //         }
-            //         //need to populate args
-            //         args[m] = commandArray[m];
-            //         m++;
-            //     }
-            // }
-
+           
             args[m] = NULL;
             redirectionsSTDOUTtoFile(out_file);
             redirectionsSTDINtoFile(in_file);    
